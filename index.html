@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game Shelf</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> 
+    <link href='https://fonts.googleapis.com/css?family=Amatica+SC' rel='stylesheet' type='text/css'> 
+    <link href='https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope' rel='stylesheet' type='text/css'> 
+    <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'> 
+
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">   
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="css/styles.css">
+    <link id="slider-style" rel="stylesheet" href="css/ion.rangeSlider.min.css">   
+   
+</head> 
+<body>
+    <div class="container">
+        <!-- ******HEADER****** --> 
+        <header>
+            <img class="logo img-fluid mx-auto d-block" src="img/logo.png" alt=""/>
+            <h1 class="name text-center">GAME <span class="color">SHELF</span></h1>
+            <h3 class="desc text-center">Which game shall we play today?</h2>
+        </header><!--//header-->
+        <div class="row">
+            <div class="col-sm">
+                <div class="frame">
+                    <h4 class="options">NUMBER OF PLAYERS</h4>
+                    <div class="radios">
+                           <input type="radio" id="2play" name="players">
+                           <label for="2play"><span>2</span></label>
+                           <input type="radio" id="3play" name="players">
+                           <label for="3play"><span>3</span></label>
+                           <input type="radio" id="4play" name="players" checked >
+                           <label for="4play"><span>4</span></label>
+                           <input type="radio" id="5play" name="players">
+                           <label for="5play"><span>5</span></label>
+                           <input type="radio" id="6play" name="players">
+                           <label for="6play"><span>6</span></label>
+                           <input type="radio" id="7play" name="players">
+                           <label for="7play"><span>7</span></label>
+                           <input type="radio" id="8play" name="players">
+                           <label for="8play"><span>8</span></label>
+                           <input type="radio" id="9play" name="players">
+                           <label for="9play"><span>9+</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <h4 class="options">GAME TIME [min]</h4>
+                <div class="time-slider">
+                    <input type="text" class="js-range-slider" name="my_range"value="" />
+                </div> 
+            </div>
+            <div class="col-sm">
+                <h4 class="options">LANGUAGE</h4> 
+                <div class="languages-container">
+                <form class="language" id="Polish-form">
+                    <input class="lang-check" id='Polish' type="checkbox" />
+                    <label class="lang-lab" for='Polish'></label>
+                </form>
+                <form class="language" id="English-form">
+                    <input class="lang-check" id='English' type="checkbox" />
+                    <label class="lang-lab" for='English'></label>
+                </form>
+                </div>
+            </div>
+        </div><!--//row-->
+        <div class="row">
+            <div class="col-sm">
+                <h4 class="options">GAME TYPE</h4>
+            </div>
+            <div class="col-sm">
+                <h4 class="options">COMPLEXITY</h4>
+            </div>
+            <div class="col-sm">
+                <h4 class="options">SOLO-TEAM</h4>
+            </div>
+        </div><!--//row-->
+    </div>
+    <!-- Javascript -->  
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>        
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>       
+    <!-- custom js -->
+    <script type="text/javascript" src="js/main.js"></script>            
+</body>
+</html> 
+
