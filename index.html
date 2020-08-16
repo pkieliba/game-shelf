@@ -28,6 +28,18 @@
             <h1 class="name text-center">GAME <span class="color">SHELF</span></h1>
             <h3 class="desc text-center">Which game shall we play today?</h2>
         </header><!--//header-->
+        <div class="row input">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="input-group-text">GAME LIBRARY:</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="input-group-file"
+                    aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="input-group-file">Choose file</label>
+                </div>
+              </div>
+        </div>
         <div class="row">
             <div class="col-sm">
                 <div class="frame">
@@ -54,8 +66,8 @@
             </div>
             <div class="col-sm">
                 <h4 class="options">GAME TIME [min]</h4>
-                <div class="time-slider">
-                    <input type="text" class="js-range-slider" name="my_range"value="" />
+                <div class="slider">
+                    <input type="text" class="time-slider" name="time-range" value="" />
                 </div> 
             </div>
             <div class="col-sm">
@@ -75,12 +87,47 @@
         <div class="row">
             <div class="col-sm">
                 <h4 class="options">GAME TYPE</h4>
+                <div class="games-container">
+                    <div class="form-label">
+                        <form class="game-type" id="compete-form">
+                            <input class="type-check" id='compete' type="checkbox" />
+                            <label class="type-lab" for='compete'></label>    
+                        </form>
+                        <div class="type-label">competitive</div>
+                    </div>
+                    <div class="form-label">
+                        <form class="game-type" id="coop-form">
+                            <input class="type-check" id='coop' type="checkbox" />
+                            <label class="type-lab" for='coop'></label>
+                        </form>
+                        <div class="type-label">cooperative</div>
+                    </div>
+                </div>    
             </div>
             <div class="col-sm">
                 <h4 class="options">COMPLEXITY</h4>
+                <div class="slider">
+                    <input type="text" class="complex-slider" name="complex-range" value="" />
+                </div> 
             </div>
             <div class="col-sm">
                 <h4 class="options">SOLO-TEAM</h4>
+                <div class="games-container">
+                    <div class="form-label">
+                        <form class="game-type" id="solo-form">
+                            <input class="type-check" id='solo' type="checkbox" />
+                            <label class="type-lab" for='solo'></label>    
+                        </form>
+                        <div class="type-label">solo</div>
+                    </div>
+                    <div class="form-label">
+                        <form class="game-type" id="team-form">
+                            <input class="type-check" id='team' type="checkbox" />
+                            <label class="type-lab" for='team'></label>
+                        </form>
+                        <div class="type-label">team</div>
+                    </div>
+                </div>
             </div>
         </div><!--//row-->
     </div>

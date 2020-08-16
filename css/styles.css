@@ -28,7 +28,7 @@ body {
 
 header {
   margin-top: 120px;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 header .logo {
@@ -63,6 +63,26 @@ h4.options {
   margin: 10px auto;
   font-size: 20px;
   font-weight: 500;
+}
+
+/* INPUT FILE */
+
+.input {
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+div.input-group {
+  max-width: 70%;
+}
+
+#input-group-text {
+  font-weight: bold;
+}
+
+.custom-file-label span{
+  
 }
 
 /* NUMBER OF PLAYERS */
@@ -110,7 +130,7 @@ h4.options {
 
 /* GAME TIME */
 
-div.time-slider {
+div.slider {
   padding: 30px 20px 20px 20px;
 }
 
@@ -169,7 +189,7 @@ form#Polish-form {
   background: url(../img/PL.jpg) 50% 75%/ cover;
 }
 
-.lang-check {
+.lang-check, .type-check {
   display: none;
 }
 
@@ -215,6 +235,106 @@ form#Polish-form {
   --i: 0; 
 }
 
+/* GAME TYPE */
+
+div.games-container {
+  display: inline-block;
+  place-content: center;
+  padding: 5px 20px 10px 20px;
+}
+
+div.form-label {
+  display: inline-grid;
+  justify-content: center;
+}
+
+div.form-label:nth-child(2) {
+  margin-left: 10px;
+}
+
+form.game-type {
+  display: inline-grid;
+  place-content: center;
+  height: 70px;
+  width: 70px;
+  overflow: hidden;
+  margin: 15px 5px;
+}
+
+form#compete-form {
+  background: url(../img/compete.png) 50% 75%/ cover;
+}
+
+form#coop-form {
+  background: url(../img/coop.png) 50% 75%/ cover;
+}
+
+.type-check + label {
+  --i: var(--check, 1);
+  --j: calc(1 - var(--i));
+  position: relative;
+  width: 70px; 
+  height: 70px;
+  cursor: pointer;
+  transition: .35s;
+}
+
+.type-check + label:before, .type-check + label:after {
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0;
+  opacity: calc(0.2 *var(--i));
+  background: #fff;
+  transition: inherit;
+  content: '';
+}
+
+.type-check + label:after {
+  left: 17.5%;
+  opacity: var(--i);
+  background: 
+    linear-gradient(90deg, rgb(243, 182, 76) 50%, transparent 0) 
+      calc(var(--j)*100%)/ 200%;
+  --poly: polygon(0 30%, 35% 60%, 100% 0, 
+                  100% 25%, 35% 85%, 0 55%);
+  -webkit-clip-path: var(--poly);
+          clip-path: var(--poly);
+  transition: opacity 0.1s, background-position 0.2s 0.1s ;
+}
+
+.type-check:not(:checked) + label:hover {
+  opacity: 0.5;
+  background: #fff;
+  z-index: 100;
+}
+
+.type-check:not(:checked) + label { 
+  --i: 0; 
+}
+
+.type-label {
+  text-align: center;
+  justify-content: center;
+  display: inline;
+	color: #333;
+	font-size: 14px;
+  line-height: 1;
+  left: -1px;
+	padding: 2px 5px;
+	background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  position: relative;
+}
+
+/* SOLO vs TEAM */
+
+form#solo-form {
+  background: url(../img/solo.png) 50% 75%/ cover;
+}
+
+form#team-form {
+  background: url(../img/team.png) 50% 75%/ cover;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 2148px) {
@@ -226,5 +346,11 @@ form#Polish-form {
 @media (max-width: 1451px) {
   .radios {
     padding-top: 15px;
+  }
+}
+
+@media (min-width: 1700px) {
+  div.input-group {
+    max-width: 50%;
   }
 }

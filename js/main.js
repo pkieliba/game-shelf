@@ -1,4 +1,4 @@
-$(".js-range-slider").ionRangeSlider({
+$(".time-slider").ionRangeSlider({
     skin: "round",
     type: "double",
     min: 0,
@@ -10,4 +10,13 @@ $(".js-range-slider").ionRangeSlider({
     decorate_both: false,
     values_sepataror: " - ",
     max_postfix: '+ ',
+});
+
+$(".complex-slider").ionRangeSlider({
+    skin: "round",
+    type: "double",
+    values: ['very simple', 'simple', 'medium', 'complex', 'very complex'],
+    grid: false,
+    decorate_both: false,
+    values_sepataror: " - ",
 });
