@@ -1,3 +1,10 @@
+
+var inputFile = document.getElementById('customFileInput');
+
+$(document).ready(function () {
+    bsCustomFileInput.init()
+  });
+
 $(".time-slider").ionRangeSlider({
     skin: "round",
     type: "double",
@@ -20,3 +27,17 @@ $(".complex-slider").ionRangeSlider({
     decorate_both: false,
     values_sepataror: " - ",
 });
+
+
+inputFile.onchange = function(e) {
+  var ext = this.value.match(/\.([^\.]+)$/)[1];
+  switch (ext) {
+    case 'csv':
+    case 'xls':
+    case 'xlsx':
+      break;
+    default:
+      alert('File type not allowed. Please choose a .csv .xls or .xlsx file.');
+      this.value = '';
+  }
+};
