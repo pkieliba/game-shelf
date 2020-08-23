@@ -14,10 +14,10 @@
 
 
     <!-- Global CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">   
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
+    <link id="slider-style" rel="stylesheet" href="css/ion.rangeSlider.min.css">  
     <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="css/styles.css">
-    <link id="slider-style" rel="stylesheet" href="css/ion.rangeSlider.min.css">   
+    <link id="theme-style" rel="stylesheet" href="css/styles.css"> 
    
 </head> 
 <body>
@@ -35,31 +35,31 @@
                 </div>
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="customFileInput"
-                    aria-describedby="inputGroupFileAddon01" accept=".xls,.xlsx,.csv">
-                  <label class="custom-file-label" for="customFileInput"><span>Choose a file</span></label>
+                    aria-describedby="inputGroupFileAddon01" accept=".csv">
+                  <label class="custom-file-label" for="customFileInput"><span>Choose a .csv file</span></label>
                 </div>
               </div>
-        </div>
+        </div><!--//row-->
         <div class="row">
             <div class="col-sm-12 col-md-4">
                 <div class="frame">
                     <h4 class="options">NUMBER OF PLAYERS</h4>
-                    <div class="radios">
-                           <input type="radio" id="2play" name="players">
+                    <div class="radios" id="radios" name="radios">
+                           <input type="radio" class="numPlay" id="2play" name="players" value=2>
                            <label for="2play"><span>2</span></label>
-                           <input type="radio" id="3play" name="players">
+                           <input type="radio" class="numPlay" id="3play" name="players" value=3>
                            <label for="3play"><span>3</span></label>
-                           <input type="radio" id="4play" name="players" checked >
+                           <input type="radio" class="numPlay" id="4play" name="players" value=4 checked >
                            <label for="4play"><span>4</span></label>
-                           <input type="radio" id="5play" name="players">
+                           <input type="radio" class="numPlay" id="5play" name="players" value=5>
                            <label for="5play"><span>5</span></label>
-                           <input type="radio" id="6play" name="players">
+                           <input type="radio" class="numPlay" id="6play" name="players" value=6>
                            <label for="6play"><span>6</span></label>
-                           <input type="radio" id="7play" name="players">
+                           <input type="radio" class="numPlay" id="7play" name="players" value=7>
                            <label for="7play"><span>7</span></label>
-                           <input type="radio" id="8play" name="players">
+                           <input type="radio" class="numPlay" id="8play" name="players" value=8>
                            <label for="8play"><span>8</span></label>
-                           <input type="radio" id="9play" name="players">
+                           <input type="radio" class="numPlay" id="9play" name="players" value=9>
                            <label for="9play"><span>9+</span></label>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     <label class="lang-lab" for='Polish'></label>
                 </form>
                 <form class="language" id="English-form">
-                    <input class="lang-check" id='English' type="checkbox" />
+                    <input class="lang-check" id='English' type="checkbox" checked />
                     <label class="lang-lab" for='English'></label>
                 </form>
                 </div>
@@ -90,7 +90,7 @@
                 <div class="games-container">
                     <div class="form-label">
                         <form class="game-type" id="compete-form">
-                            <input class="type-check" id='compete' type="checkbox" />
+                            <input class="type-check" id='compete' type="checkbox" checked />
                             <label class="type-lab" for='compete'></label>    
                         </form>
                         <div class="type-label">competitive</div>
@@ -115,7 +115,7 @@
                 <div class="solo-container">
                     <div class="form-label">
                         <form class="game-type" id="solo-form">
-                            <input class="type-check" id='solo' type="checkbox" />
+                            <input class="type-check" id='solo' type="checkbox"  checked/>
                             <label class="type-lab" for='solo'></label>    
                         </form>
                         <div class="type-label">solo</div>
@@ -130,12 +130,30 @@
                 </div>
             </div>
         </div><!--//row-->
+        <div class="row choice" id='choice'>
+            <div class="col-xs-12 text-center">
+                <h1 class="chosen-text">We shall play:</h1>
+                <div class="chosen" id="chosen-game">
+                    <!-- dynamic content -->
+                </div>
+                <div class="reroll">
+                    <button type="button" class="btn btn-primary btn-lg" id="reroll-button">REROLL</button>
+                </div>   
+            </div>
+        </div><!--//row-->
+        <div class="row library"  id="library">
+            <span class="filteredGames"></span>
+        </div>
+        <div class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 row-cols-3l-8 row-cols-4l-10 filtered-pics" id='filtered-pics'>
+             <!-- dynamic content -->
+        </div><!--//row-->
     </div>
     <!-- Javascript -->  
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>        
     <script type="text/javascript" src="js/bootstrap.min.js"></script> 
     <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>      
-    <script type="text/javascript" src="js/bs-custom-file-input.min.js"></script>    
+    <script type="text/javascript" src="js/bs-custom-file-input.min.js"></script> 
+    <script type="text/javascript" src="js/papaparse.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="js/main.js"></script>            
 </body>

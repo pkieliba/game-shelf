@@ -17,9 +17,6 @@ body {
 }
 
 .container {
-  border-style: solid;
-  border-width: 10;
-  border-color: black;
   max-width: 70%;
   margin-right: auto;
   margin-left: auto;
@@ -190,7 +187,7 @@ form#Polish-form {
   background: url(../img/PL.jpg) 50% 75%/ cover;
 }
 
-.lang-check, .type-check {
+.lang-check, .type-check, .game-check {
   display: none;
 }
 
@@ -342,6 +339,170 @@ div.solo-container {
   padding: 5px 20px 20px 20px;
 }
 
+/* CHOSEN GAME */
+
+div.choice {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  margin: 40px 0px 40px 0px;
+}
+
+div.chosen {
+  display: flex;
+}
+
+div.games-box {
+  justify-content: center;
+  align-items: center;
+}
+
+div.chosen-container {
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 300px;
+  width: 300px;
+  margin: 20px 0px 40px 0px;
+  border: solid 2px #252525;
+  color: #252525;
+  font-family: "Muli", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  align-items: center; 
+  justify-content: center;
+}
+
+.chosen-text {
+  color: rgb(243, 182, 76);
+  font-family: "Annie Use Your Telescope", sans-serif;
+  font-weight: 900;
+}
+
+#reroll-button {
+  font-family: "Nexa", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  background: rgb(243, 182, 76);
+  border: solid 2px rgb(243, 182, 76);
+  color: #252525;
+  cursor: pointer;
+  justify-content: center;
+  visibility: hidden;
+}
+
+#reroll-button:hover{
+  background:  rgba(0,0,0,0.1);
+  border: solid 2px rgba(0,0,0,0.1);
+}
+
+
+/* GAME LIBRARY */
+
+div.library {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0,0,0,0.03);
+  visibility: hidden;
+}
+
+span.filteredGames {
+  color: #252525;
+  font-family: "Muli", sans-serif;
+  margin: 10px auto;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.filtered-pics{
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 10px;
+  background: rgba(0,0,0,0.03);
+  padding-bottom: 15px;
+  visibility: hidden;
+}
+
+div.filtered-container {
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 150px;
+  width: 150px;
+  margin: 5px;
+  background: rgba(0,0,0,0.1);
+  border: solid 2px #252525;
+  color: #252525;
+  font-family: "Muli", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  align-items: center; 
+  justify-content: center;
+  position: relative; 
+}
+
+.game-check + label {
+  --i: var(--check, 1);
+  --j: calc(1 - var(--i));
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 30px; 
+  height: 30px;
+  cursor: pointer;
+  transition: .35s;
+  box-sizing: border-box;
+  border: 1px solid #252525;
+  border-top: none;
+  border-right: none;
+}
+
+.game-check + label:before, .game-check + label:after {
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0;
+  opacity: calc(0.2 *var(--i));
+  background: #fff;
+  transition: inherit;
+  content: '';
+}
+
+.game-check + label:after {
+  left: 17.5%;
+  opacity: var(--i);
+  background: 
+    linear-gradient(90deg, rgb(243, 182, 76) 50%, transparent 0) 
+      calc(var(--j)*100%)/ 200%;
+  --poly: polygon(0 30%, 35% 60%, 100% 0, 
+                  100% 25%, 35% 85%, 0 55%);
+  -webkit-clip-path: var(--poly);
+          clip-path: var(--poly);
+  transition: opacity 0.05s, background-position 0.2s 0.05s;
+}
+
+.game-check:not(:checked) + label:hover {
+  opacity: 0.5;
+  background: #fff;
+  z-index: 100;
+}
+
+.game-check:not(:checked) + label { 
+  --i: 0; 
+}
+
+p.game-name {
+  text-align: center;
+  justify-content: center;
+	color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+	padding: 2px 5px;
+	background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  position: relative;
+}
+
+
 /* RESPONSIVE */
 
 @media (max-width: 2148px) {
@@ -373,6 +534,9 @@ div.solo-container {
     padding-top: 0px;
     display: inline-block;
   }
+  div.input-group-prepend {
+    display: none;
+  }
 }
 
 @media (min-width: 1700px) {
@@ -380,4 +544,3 @@ div.solo-container {
     max-width: 50%;
   }
 }
-
