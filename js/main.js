@@ -3,6 +3,7 @@ var gameLibrary;
 var filteredLibrary;
 var finalLibrary;
 var chosenGame;
+var complexValues = ['very simple', 'simple', 'medium', 'complex', 'very complex'];
 var numPlayers = parseInt(document.querySelector('input[name="players"]:checked').value);
 var maxTime = 120;
 var minTime = 60;
@@ -43,7 +44,7 @@ $(".time-slider").ionRangeSlider({
 $(".complex-slider").ionRangeSlider({
     skin: "round",
     type: "double",
-    values: ['very simple', 'simple', 'medium', 'complex', 'very complex'],
+    values: complexValues,
     grid: false,
     decorate_both: false,
     values_sepataror: " - ",
@@ -178,8 +179,15 @@ function filterData(library) {
 
 function printGame(item){
     var itemName = item.replace(/ /g, '');
-    document.querySelector(".filtered-pics").innerHTML += '<div class="col games-box"><div class="filtered-container"><input class="game-check" type="checkbox" id=' + itemName + 
-    ' checked /><label class="game-lab" for=' + itemName + '></label> ' + item + '</div><p class="game-name">' + item + '</p></div>'
+    document.querySelector(".filtered-pics").innerHTML += 
+    '<div class="col games-box"><div class="filtered-container" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true"' +
+    'title="<p><b>Players: </b>' + gameLibrary.find(x => x.GAME == item).MIN_PLAYERS + '-' + gameLibrary.find(x => x.GAME == item).MAX_PLAYERS +
+    '</p><b>Time: </b>' + (parseInt(gameLibrary.find(x => x.GAME == item).MIN_TIME) +  parseInt(gameLibrary.find(x => x.GAME == item).MAX_TIME))/2 +
+    '</p><p><b>Complexity: </b>' + complexValues[gameLibrary.find(x => x.GAME == item).COMPLEXITY-1] +
+    '</p><p><b>Language: </b>' + gameLibrary.find(x => x.GAME == item).LANGUAGE +
+    '</p>"><input class="game-check" type="checkbox" id=' + 
+    itemName + ' checked /><label class="game-lab" for=' + itemName + '></label> ' + item + '</div><p class="game-name">' + item + '</p></div>'
+    $('[data-toggle="tooltip"]').tooltip({delay: {"show": 1000}})
 }
 
 function addListener(item) {

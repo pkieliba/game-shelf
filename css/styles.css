@@ -500,6 +500,25 @@ p.game-name {
 	background-color: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   position: relative;
+  max-width: 200px;
+}
+
+
+
+.tooltip > .tooltip-inner {
+
+  padding: 10px;
+  font-size: 16px;
+  background-color: rgba(243, 182, 76, 0.85);
+  color: #333;
+  font-family: "Muli";
+  text-align: justify;
+
+}
+
+.tooltip > .tooltip-inner > p {
+  padding: 0px;
+  margin: 0px;
 }
 
 
@@ -536,6 +555,9 @@ p.game-name {
   }
   div.input-group-prepend {
     display: none;
+  }
+  .tooltip {
+    display: none !important;
   }
 }
 
