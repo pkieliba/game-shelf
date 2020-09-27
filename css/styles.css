@@ -362,7 +362,7 @@ div.chosen-container {
   display: inline-flex;
   height: 300px;
   width: 300px;
-  margin: 20px 0px 40px 0px;
+  margin: 20px 0px 20px 0px;
   border: solid 2px #252525;
   color: #252525;
   font-family: "Muli", sans-serif;
@@ -376,6 +376,21 @@ div.chosen-container {
   color: rgb(243, 182, 76);
   font-family: "Annie Use Your Telescope", sans-serif;
   font-weight: 900;
+}
+
+p.chosen-name {
+  text-align: center;
+  justify-content: center;
+  color: #252525;
+  font-family: "Muli", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.5;
+	padding: 2px 5px;
+	background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 #reroll-button {
@@ -455,6 +470,7 @@ div.filtered-container {
   border: 1px solid #252525;
   border-top: none;
   border-right: none;
+  background: rgba(255,255,255,0.8);
 }
 
 .game-check + label:before, .game-check + label:after {
@@ -486,7 +502,9 @@ div.filtered-container {
 }
 
 .game-check:not(:checked) + label { 
-  --i: 0; 
+  --i: 0;
+  opacity: 0.8;
+  background: #fff;
 }
 
 p.game-name {
@@ -500,20 +518,16 @@ p.game-name {
 	background-color: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   position: relative;
-  max-width: 200px;
 }
 
-
-
 .tooltip > .tooltip-inner {
-
   padding: 10px;
   font-size: 16px;
-  background-color: rgba(243, 182, 76, 0.85);
+  background-color: rgba(243, 182, 76, 0.9);
   color: #333;
   font-family: "Muli";
-  text-align: justify;
-
+  text-align: left;
+  max-width: 300px;
 }
 
 .tooltip > .tooltip-inner > p {

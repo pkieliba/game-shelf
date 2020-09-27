@@ -1,0 +1,23 @@
+﻿GAME,MIN_PLAYERS,MAX_PLAYERS,MIN_TIME,MAX_TIME,COMPLEXITY,LANGUAGE,TYPE,TEAM
+Saboteur,3,10,30,30,1,NA,competitive,no
+Guillotine,2,5,45,45,1,ENG,competitive,no
+Codenames,4,12,45,45,2,ENG,competitive,yes
+Munchkin,3,8,120,180,4,PL,competitive,no
+Munchkin Legends,3,6,120,180,4,ENG,competitive,no
+Unstable Unicorns,2,8,40,40,3,ENG,competitive,no
+Sushi Go,2,5,15,15,1,NA,competitive,no
+Hive,2,2,15,30,3,NA,competitive,no
+Honshu,2,5,30,30,2,NA,competitive,no
+Gloom,2,4,40,40,2,ENG,competitive,no
+Survive: Escape from Atlantis!,2,6,40,60,3,NA,competitive,no
+Magic Maze,1,8,30,60,3,NA,cooperative,yes
+Celestia,2,6,30,30,1,NA,competitive,no
+Kolejka,2,5,60,60,3,PL,competitive,no
+Catan,3,6,60,120,3,ENG,competitive,no
+Kingdomino,2,4,20,20,1,NA,competitive,no
+Tabu,4,12,60,120,2,PL,competitive,yes
+Terra Mystica,2,5,120,240,5,NA,competitive,no
+Scrabble,1,4,50,50,3,PL,competitive,no
+Teraformacja Marsa,1,5,120,120,5,PL,competitive,no
+Na Skrzydłach,1,5,60,60,4,PL,competitive,no
+Cluedo,2,6,40,60,2,NA,competitive,no
